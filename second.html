@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="asset/wow/css/animate.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <title>jquery document</title>
+</head>
+<body>
+
+
+  <div>
+
+    <!--error events-->
+    <h1>1. error event</h1>
+    <img  src="images/bird.jpg" alt="Pulpit Rock" width="284" height="213"><br>
+    <button id="err">Set the width attribute of the image</button>
+
+  </div>
+  <br>
+  <br>
+
+
+  <!--hide and show-->
+  <div>
+    <h1>2.hide and show effects</h1>
+
+    <button id="showing">show content</button>
+    <button id="hiding">hide content</button>
+    <div id="paragraphing">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+
+
+  </div>
+  <br>
+  <br>
+
+  <!--fade out-->
+
+
+  <div>
+    <h1>3.fade out</h1>
+    <button id="button_fadeout">Click to fade out boxes</button><br><br>
+
+    <div id="div1out" style="width:80px;height:80px;background-color:red;border-radius: 50%;"></div><br>
+    <div id="div2out" style="width:80px;height:80px;background-color:green;border-radius: 50%;"></div><br>
+    <div id="div3out" style="width:80px;height:80px;background-color:blue;border-radius: 50%;"></div>
+
+  </div>
+
+
+  <!--fade toggle-->
+  <h1>4.fade toggle</h1>
+  <div>
+    <button id="fadetog">fade toggle</button><br><br>
+
+    <div id="div1tog" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div2tog" style="width:80px;height:80px;background-color:green;"></div>
+    <br>
+    <div id="div3tog" style="width:80px;height:80px;background-color:blue;"></div>
+  </div>
+
+
+  <!--slide toggle-->
+  <div>
+    <h1>5. slide toggle</h1>
+    <div id="flip">Click to slide the panel down or up</div>
+    <div id="panel">Hello world!</div>
+
+  </div>
+
+
+
+
+
+  <!--start and end animation-->
+
+  <div>
+    <h1>6. start and end animation</h1>
+    <button id="animbutton">Start Animation</button>
+    <button id="animstop">Stop Animation</button>
+
+    <div id="animdiv" style="background:#98bf21;height:100px;width:100px;position:absolute;border-radius:50%;"></div> 
+
+  </div>
+
+
+
+
+  <!--page number-->
+
+  <div class="container-fluid">
+    <div class="ending1">
+
+     <ul class="list-inline">
+      <li class="list-inline-item"><a href="index.html">page 1</a></li>
+      <li class="list-inline-item"><a href="second.html">page 2</a></li>
+
+    </ul>
+
+  </div>
+  
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--jquery links-->
+<script src="js/jquery.min.js"></script>
+
+<!--popper bootstrap js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<!--jquery scripts-->
+
+
+
+
+
+<script>
+  $(document).ready(function(){
+    $("#err").click(function(){
+      alert("changing the image size")
+      $("img").attr("width", "500");
+    });
+
+
+  //hide show
+  //show
+  $("#showing").click(function(){
+    $("#paragraphing").show();
+  })
+ //hide
+ $("#hiding").click(function(){
+  $("#paragraphing").hide();
+})
+
+//fade out
+$("#button_fadeout").click(function(){
+  $("#div1out").fadeOut();
+  $("#div2out").fadeOut("slow");
+  $("#div3out").fadeOut(3000);
+});
+//fade toggle
+$("#fadetog").click(function(){
+  $("#div1tog").fadeToggle();
+  $("#div2tog").fadeToggle("slow");
+  $("#div3tog").fadeToggle(3000);
+});
+
+
+//slide toggle
+$("#flip").click(function(){
+  $("#panel").slideToggle("slow");
+});
+
+//start animation
+$("#animbutton").click(function(){
+    $("#animdiv").animate({left: '1000px'}, 5000);
+  });
+
+
+$("#animstop").click(function(){
+    $("#animdiv").stop();
+  });
+
+});
+</script>
+
+
+
+</body>
+</html>
